@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    
+
+</body>
+<script>
+    let pais = prompt("En que país nació? ");
+    
+
+    /*
+    if(pais === "Colombia")
+        alert("Su gentilicio es colombiano")
+    else if(pais === "Venezolano")
+        alert("Su gentilicio es venezolano")
+    else if(pais === "Ecuador")
+        alert("Su gentilicio es ecuatoriano")
+    else (pais === "Argentino")
+        alert("Su gentilicio es argentino")*/
+    let edad = Number(prompt("Cual es tu edad? "));
+    let msg = "\n";
+    if (edad>17){
+        msg +="Eres mayor de edad";
+    } else {
+        msg="Eres menor de edad";
+    }
+
+    switch (pais){
+        case"Colombia":
+        alert("Su gentilicio es colombiano" + msg)
+        break;
+        case"Venezuela":
+        alert("Su gentilicio es venezolano" + msg)
+        break;
+        case"Ecuador":
+        alert("Su gentilicio es ecuatoriano" + msg)
+        break;
+        case"Argentina":
+        alert("Su gentilicio es Argentino" + msg)
+        break;
+        default:
+            alert("No eres latino" + msg)
+
+    }
+</script>
+</html>

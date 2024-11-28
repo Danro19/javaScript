@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a = Number(prompt("ingrese el valor (diferente a 0) de *a*: "));
+    let b = Number(prompt("Ingrese el valor de *b*: "));
+    let c = Number(prompt("Ingrese el valor de *c*: "));
+    if(a!=0){
+        a=a
+    } else {
+        let a = Number(prompt("ingrese un valor valido para *a* (diferente a 0)"))
+    };
+    if(((b*b)-4*a*c)>0){
+        validacion=(b*b-4*a*c)
+        validacion1=Math.sqrt(validacion)
+        x1=((-b+validacion1)/(2*a))
+        x2=((-b-validacion1)/(2*a))
+        solucion1=a*(x1*x1)+b*x1+c
+        solucion2=a*(x2*x2)+b*x2+c
+    
+
+    }else{ 
+        alert("Los valores al integrarlos en la formula no permitieron su resolucion")
+        let a = Number(prompt("ingrese un valor valido para a (diferente a 0): "));
+        let b = Number(prompt("Ingrese un valor valido para b: "));
+        let c = Number(prompt("Ingrese un valor valido para c: "));
+        if(((b*b)-4*a*c)>0){
+        validacion=(b*b-4*a*c)
+        validacion1=Math.sqrt(validacion)
+        x1=((-b+validacion1)/(2*a))
+        x2=((-b-validacion1)/(2*a))
+        solucion1=a*(x1*x1)+b*x1+c
+        solucion2=a*(x2*x2)+b*x2+c}
+    };
+    
+   if(solucion1===0 && solucion2===0){
+        alert("se desarrollo con habilidad y se pudo conseguir7");
+    } else{
+        alert("Rectifica el codigo y revisa el error, no te rindas7")
+    };
+    //mejorar logica matematica con respecto a las funciones trigonometricas y algebra
+</script>
+</html>
