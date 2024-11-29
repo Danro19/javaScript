@@ -1,0 +1,25 @@
+# Funciones
+
+
+- Funciones Declarativas (se estipula como funcion)
+- Funciones Expresivas (se asocia a una constante o una variable), mantiene una estructura similar a la funcion declarativa, tiene la siguiente estructura: 
+    ### Estructura
+        " constante nombre-constante = funcion (valor-de-la-funcion){cuerpo de la funcion
+        return:
+        } "
+¡"Se debe poner antes de su uso"!.
+
+- Funciones Flecha
+    ### Estructura 
+        " constante nombredelaconstante =( parametros ) => {
+        return
+        }"
+
+
+
+# Ejemplo1
+
+    ### Interes Compuesto
+
+    Se hizo un codigo que pudiera medir el interés de una inversion y se hizo todo con javaScript, usando ciclos, funciones y condicionales--- Se muestra una tabla en la consola y en la página web.
+
