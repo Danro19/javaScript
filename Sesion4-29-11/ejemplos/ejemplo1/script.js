@@ -16,10 +16,14 @@ while(menu !== 5); {
       let nombre = prompt("Ingrese el nombre del producto");
       let precio = Number(prompt("Ingrese el precio"));
       let cantidad = Number(prompt("Ingrese la cantidad"));
-
-      let inventario = {};
-      inventario.producto = [nombre, precio, cantidad];
       
+      let inventario ={};
+      let productos = [nombre, precio, cantidad] 
+      
+      inventario [nombre] = productos[0];
+        inventario[nombre ] = productos;
+      
+      console.log(inventario)
     }
 
   if (menu === 3) {
