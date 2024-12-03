@@ -1,0 +1,6 @@
+# Arrays
+
+- los Arrays (Vectores y matrices), son diferentes a las listas de python forma de estructuracion, crecen dinamicamente.
+
+## Estructura
+- Let arrayName = [valor1, valor2, ...];
