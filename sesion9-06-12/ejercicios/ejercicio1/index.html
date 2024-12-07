@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+
+
+   <form action="">
+    <label for="fecha">Ingrese la fecha del libro</label>
+    <input type="date" name="fecha" id="fecha">
+    <input type="submit" value="Enviar">
+    </form>
+
+</body>
+<script>
+     document.getElementById("formulario").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evitar que se recargue la página
+
+        const fechaInput = document.getElementById("fecha").value; // Capturar la fecha ingresada
+        if (!fechaInput) {
+            document.getElementById("resultado").textContent = "Por favor, ingrese una fecha.";
+            return;
+        }
+    const fechaPactada= new Date (fechaInput);
+    const fechaEntrega = new Date();
+    const miliDia = 1000*60*60*24;
+
+    if (fechaEntrega.getTime()>fechaPactada.getTime()){
+        let diferenciaFecha = fechaEntrega.getTime()-fechaPactada.getTime()
+
+        let diasDiferencia = Math.floor(diferenciaFecha/miliDia); 
+        if (fechaEntrega<4 ){
+            let multa = 7000*diasDiferencia 
+           document.write(`<p>Los dias de multa son:  ${diasDiferencia} la multa es de: ${multa}</p>` ) 
+
+        }if(diasDiferencia===0){
+            document.write(`<p> El libro se entrego el dia acordado</p>`)
+
+        }else{
+            let multa = 10000*diasDiferencia
+            document.write(`<p>Los dias de multa son: ${diasDiferencia}, la multa es de: ${multa}  , además tiene una sancion de no prestamo por 6 meses</p>`)
+        }
+        
+    }
+    });
+
+</script>
+</html>
