@@ -1,0 +1,11 @@
+# Peticiones.
+
+- *Ajax se usa para hacer peticiones asincronas. Se permite permitir hacer peticiones sin necesidad de que la pagina se refresque. Esto mejore la experiencia.*
+
+- *Se creo el formato Json, y esto reemplazo a xml* 
+
+- **SPA: SINGLE PAGE APPLICATION**
+    * WhatsApp, Twitter(x), Google Drive. 
+    * solicita datos y los trae a la aplicativo
+
+## Fetch 

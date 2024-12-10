@@ -1,0 +1,26 @@
+[
+	{
+		"Nombre": "Laura",
+		"Team": "Sputnik M",
+		"Edad": "19",
+		"Sexo": "F"
+	},
+	{
+		"Nombre": "Miguel",
+		"Team": "Sputnik C",
+		"Edad": "21",
+		"Sexo": "M"
+	},
+	{
+		"Nombre": "Daniela",
+		"Team": "Sputnik C",
+		"Edad": "17",
+		"Sexo": "F"
+	},
+	{
+		"Nombre": "Sergio",
+		"Team": "Sputnik J",
+		"Edad": "20",
+		"Sexo": "M"
+	}
+]
