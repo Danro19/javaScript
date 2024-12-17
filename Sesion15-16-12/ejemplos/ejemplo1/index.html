@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .cambiacolor{
+        color: tomato;
+        transition: color 0.5s;
+    }
+</style>
+<body>
+    <h1>01 Ejemplo de eventos</h1>
+    <hr>
+
+    <button id="boton"> Eventos del botón</button>
+</body>
+
+    <script>
+        const boton = document.getElementById("boton");
+        boton.onclick = () => alert("Haz presionado el botón");
+        boton.addEventListener("mouseover", () =>{
+            const h1 = document.querySelector("h1");
+            h1.style.color="tomato";
+        })
+        boton.addEventListener("mouseout", () =>{
+            const h1 = document.querySelector("h1");
+            h1.style.color="blue";
+        })
+    </script>
+
+</html>

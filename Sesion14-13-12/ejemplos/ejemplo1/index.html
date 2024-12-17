@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de atributos</title>
+</head>
+<body>
+    <p align="left" id="parrafo">Campus lands</p>
+    <button onclick="obtenerArtributos()">Obtener artibutos</button> <br><br>
+    <button onclick="cambiarArtributos()">Cambiar artibutos</button> <br><br>
+    <button onclick="intercambiarArtributos()">Ocultar parrafo</button> <br><br>
+</body>
+    <script>
+        const parrafo = document.getElementById("parrafo")
+        function obtenerArtributos(){
+            alert(parrafo.getAttribute("align"));
+        }
+        function cambiarArtributos(){
+            const align = parrafo.getAttribute("align");
+            parrafo.setAttribute("align", align === "center" ? "left " : "center");
+        }
+
+        function intercambiarArtributos(){
+            const valor = parrafo.toggleAttribute("hidden");
+            const boton = document.querySelectorAll("button")[2];
+            boton.innerText =  valor ? "Mostrar Parrafo" : "Ocultar Parrafo";
+        }
+    </script>
+
+</html>

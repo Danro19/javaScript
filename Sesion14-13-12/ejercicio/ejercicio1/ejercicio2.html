@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black min-h-screen flex justify-center items-center font-sans text-white">
+    <div class="bg-gray-800 shadow-lg rounded-lg p-8 w-full max-w-lg">
+        <h1 class="text-3xl font-semibold text-center text-red-600 mb-6">Formulario de Pedido</h1>
+        
+        <div class="mb-4">
+            <label for="nombre" class="block text-lg text-gray-300">Nombre del cliente</label>
+            <input type="text" id="nombre" placeholder="Nombre" class="mt-2 w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 bg-gray-900 text-white" />
+        </div>
+
+        <div class="mb-4">
+            <p class="text-lg text-gray-300">Material de la caja</p>
+            <select name="tipo" id="tipo" class="mt-2 w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 bg-gray-900 text-white">
+                <option value="plastico">Plástico</option>
+                <option value="madera">Madera</option>
+                <option value="metal">Metal</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <p class="text-lg text-gray-300">Seleccione unas dimensiones para la caja</p>
+            <div class="space-y-2">
+                <label class="inline-flex items-center text-gray-300">
+                    <input type="radio" name="tipo" value="diminutas" checked class="form-radio text-gray-500" />
+                    <span class="ml-2">Diminutas</span>
+                </label>
+                <label class="inline-flex items-center text-gray-300">
+                    <input type="radio" name="tipo" value="medianas" class="form-radio text-gray-500" />
+                    <span class="ml-2">Medianas</span>
+                </label>
+                <label class="inline-flex items-center text-gray-300">
+                    <input type="radio" name="tipo" value="grandes" class="form-radio text-gray-500" />
+                    <span class="ml-2">Grandes</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="comentarios" class="block text-lg text-gray-300">Comentarios</label>
+            <textarea name="comentarios" id="comentarios" cols="30" rows="5" class="mt-2 w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 bg-gray-900 text-white"></textarea>
+        </div>
+
+        <div class="mb-4 flex justify-center">
+            <input type="button" value="Enviar" onclick="anade()" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition ease-in-out duration-300" />
+        </div>
+
+        <div class="mt-6">
+            <textarea name="final" id="final" cols="100" rows="5" readonly class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-900 text-gray-300" placeholder="El resultado aparecerá aquí..."></textarea>
+        </div>
+    </div>
+
+    <script>
+        function anade() {
+            let nombre = document.createElement("p"); 
+            let material = document.createElement("p"); 
+            let dimensiones = document.createElement("p"); 
+            let comentarios = document.createElement("p"); 
+            nombre.textContent = document.querySelector("#nombre").value
+            material.textContent = document.querySelector("#tipo").value
+            dimensiones.textContent = document.querySelector("[name=tipo]:checked").value
+            comentarios.textContent = document.querySelector("#comentarios").value
+
+            const areaTexto = document.getElementById('final');
+            areaTexto.value = `${nombre.textContent} ha pedido una caja de ${material.textContent} con unas dimensiones ${dimensiones.textContent}. ${comentarios.textContent}`
+        }
+    </script>
+</body>
+
+</html>

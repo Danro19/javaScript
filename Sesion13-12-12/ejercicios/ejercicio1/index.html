@@ -1,0 +1,71 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+
+<body>
+    <ul id="lista">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetuer adipiscing elit</li>
+        <li>Sed mattis enim vitae orci</li>
+        <li>Phasellus libero</li>
+        <li>Maecenas nisl arcu</li>
+    </ul>
+
+    <form id="formlist">
+        <label for="listaanadir">Añadir a la lista</label>
+        <input
+          type="text"
+          id="listaanadir"
+          placeholder="Añadir item"
+          required
+        />
+       
+    </form >
+     <input type="button" id= bottom value="Añadir elemento">
+
+    <script>
+        function anade(){
+        document.getElementById("bottom").addEventListener("click", () => {
+
+            listaSS =document.getElementById("listaanadir").value.trim();
+
+            listasSS = sessionStorage.setItem("listanueva", listaSS);
+             if (listaSS !== "") {
+           
+            sessionStorage.setItem("listanueva", listaSS);
+
+           
+            let listaN = sessionStorage.getItem("listanueva");
+
+           
+            let nuevoElemento = document.createElement("li");
+            nuevoElemento.textContent = listaN;
+
+           
+            document.getElementById("lista").appendChild(nuevoElemento);
+
+            
+            document.getElementById("listaanadir").value = "";
+        } else {
+            alert("Por favor, ingrese un valor válido.");
+        }
+
+        });
+        document.getElementById("listaanadir").addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                    event.preventDefault(); // Previene el comportamiento por defecto de "Enter"
+                }
+            });
+        }
+    
+    anade()
+
+    </script>
+</body>
+
+</html>

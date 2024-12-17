@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendchild</title>
+<style>
+    .container{
+        border:blue solid 1px;
+    }
+    .parent{
+        border:mediumorchid solid 1px;
+        margin: 30px;
+    }
+    .textRojo{
+        color: red;
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="parent">
+            <p>Adoro el silencio en clase</p>
+            <p class="mensaje">Hola, Soy un camper</p>
+        </div>
+    </div>
+    <button id="appendChild" onclick="addElementos()">agregar div</button>
+</body>
+
+    <script>
+        const container = document.querySelector(".container");
+        const parent = document.querySelector(".parent");
+        let cont = 0;
+
+        function addElementos(){
+            const div = document.createElement("div")
+            div.innerHTML = `<p onclick='alert(\"Soy un parrafo\")' class='textRojo'>Div con nuevo parrafo ${++cont}</p>`;
+            container.appendChild(div);
+        }
+
+    </script>
+
+</html>

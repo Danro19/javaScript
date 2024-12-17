@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Arrays de Cadenas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button, textarea {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            cursor: pointer;
+            border-radius: 4px;
+            border-color: #146cec;
+            background-color: #146cec;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ordenar Arrays de Cadenas</h1>
+    <hr>
+    <p>Ingrese nombres en la caja de texto de abajo y ordene este listado el cual aparecerá en el área de texto.</p>
+
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ingrese un nombre">
+        <button id="agregar">Agregar y ordenar nombre</button>
+    </div>
+
+    <br><br>
+
+    <h2>Nombres ordenados</h2> 
+
+    <hr>
+
+    <textarea id="nombresOrdenados" rows="10" cols="50" readonly>Aquí aparecerán los nombres ordenados</textarea>
+
+    <br>
+
+    <button id="limpiar">Limpiar</button>
+
+    <script>
+        const nombres = [];
+
+        function agregarNombre() {
+            const inputNombre = document.getElementById('nombre');
+            const nombre = inputNombre.value.trim();
+
+            if (nombre) {
+                nombres.push(nombre);
+                ordenarNombres();
+                mostrarNombres();
+                inputNombre.value = '';
+            }
+        }
+
+        function ordenarNombres() {
+            nombres.sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' }));
+        }
+
+        function mostrarNombres() {
+            const areaTexto = document.getElementById('nombresOrdenados');
+            areaTexto.value = nombres.join('\n');
+        }
+
+        function limpiarNombres() {
+            nombres.length = 0;
+            mostrarNombres();
+            document.getElementById('nombresOrdenados').value = 'Aquí aparecerán los nombres ordenados';
+        }
+
+        document.getElementById('agregar').addEventListener('click', agregarNombre);
+        document.getElementById('limpiar').addEventListener('click', limpiarNombres);
+    </script>
+</body>
+</html>

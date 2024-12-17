@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="01-sesionstorage-ejemplo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="contenedor">
+      <h1>Inicio de Sesión</h1>
+      <form id="formularioLogin" class="formulario">
+        <label for="nombreUsuario">Nombre de Usuario:</label>
+        <input
+          type="text"
+          id="nombreUsuario"
+          placeholder="Ingresa tu nombre"
+          required
+        />
+        <button type="submit" class="boton">Ingresar</button>
+        <button id="btnClass" class="boton">Clases</button>  
+      </form>
+      <br>
+      <p id="parrafo"></p>
+    </div>
+
+    <script>
+       
+      const formu = document.getElementById("formularioLogin");
+      formu.addEventListener("submit", event =>{
+        event.preventDefault();
+
+        const nombreUsu = document.getElementById("nombreUsuario").value.trim();
+        if (nombreUsu) {
+          sessionStorage.setItem("usuarioActual", nombreUsu);
+          sessionStorage.setItem("paginaAnterior", window.location.href);
+          window.location.href = "dashboard.html"
+        }else{
+          alert("Error. Usuario inválido.")
+        }
+        event.stopPropagation
+      });
+      document.getElementById("btnClass").addEventListener("click", () => {
+        // const lstclases =  document.querySelector(".contenedor").classList;
+        // let cantClases=lstclases.length;
+        // alert(cantClases + ": " + lstclases);
+        // lstclases.add("sombra");
+
+
+        // alert(lstclases.contains("sombra"));
+        
+
+        // lstclases.remove("sombra");
+        
+        // //toggle(clase); se agrega la clase si no existe, en el caso de que exista no hace nada
+        // lstclases.toggle("sombra")
+
+        
+        // cantClases=lstclases.length;
+        // alert(cantClases + ": " + lstclases);
+
+        // //replace(old, new) reemplaza la clase old por la clase new
+
+        // lstclases.replace("sombra", "sombra2");
+
+
+        // const lstattr = document.querySelector(".contenedor").attributes;
+        // for(let attr of lstattr)
+        // alert(`${attr.name}: ${attr.value}`);
+        
+        //nodeName: Devuelve el nombre del nodo
+        alert(document.querySelector("#nombreUsuario").nodeName);
+
+        // textContet obtiene o modifica el texto de la etiqueta
+
+        // textContent obtiene o modifica el texto de la etiqueta 
+
+        // innerHTML: inserta  HTML en la etiqueta
+
+        //  outerText: devuelve el html (que uno indique) y los hijos de la etiqueta
+
+        alert(document.querySelector(".contenedor").outerHTML)
+
+
+        // setHTML : agrega HTML a la etiqueta de forma segura. Evita la inyeccion de html malicioso: que no tenga JS.
+
+        document.getElementById("parrafo").innerHTML =  '<script> \
+          alert("soy malisioso");\
+          <\/script>' 
+      })
+     
+    </script>
+  </body>
+</html>
