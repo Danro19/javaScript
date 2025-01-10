@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ejemplo de event.preventDefault()</h1>
+    <p>Haz clic en el siguiente enlace:</p>
+    <a href="https://www.ejemplo.com" id="miEnlace">Ir a Ejemplo.com</a>
+
+    <script>
+      // Seleccionamos el enlace
+      const enlace = document.querySelector("#miEnlace");
+
+      // Agregamos el evento click
+      enlace.addEventListener("click", (event) => {
+        console.log("Estado del comportamiento: ", event.defaultPrevented);
+
+        event.preventDefault(); // Evita la navegación predeterminada
+
+        console.log("El comportamiento predeterminado ha sido evitado.");
+
+        // Verificar si se evitó el comportamiento por defecto
+        console.log("¿Se evitó el comportamiento?:", event.defaultPrevented);
+      });
+    </script>
+  </body>
+</html>

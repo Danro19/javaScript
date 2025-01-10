@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style> 
+#scrollDiv{
+    width: 300px;
+    height: 150px;
+    border: 2px solid black;
+    overflow: scroll;
+    margin: 20px auto;
+}
+.content{
+    height: 500px;
+    padding: 10px;
+    background: linear-gradient(white, lightblue);
+}
+</style>
+<body>
+  <h1 style="text-align: center">Evento Scroll con addEventListener</h1>
+  <div id="scrollDiv">
+    <div class="content">
+      <p>Desplázate hacia abajo para ver el evento en acción.</p>
+      <p>
+        Este contenedor tiene un alto fijo y contenido adicional que requiere
+        desplazamiento.
+      </p>
+      <p>Sigue haciendo scroll y revisa la consola.</p>
+    </div>
+  </div>
+
+  <script>
+    const scrollElement = document.getElementById("scrollDiv");
+
+    scrollElement.addEventListener(
+      "scroll",
+      () => {
+        console.log("Scrolling...");
+      },
+      { passive: true }
+      // Este ejemplo utiliza la opción passive para mejorar el
+      // rendimiento del evento de desplazamiento (scroll).
+    );
+  </script>
+</body>

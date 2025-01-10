@@ -1,0 +1,13 @@
+<button>Saludar</button>
+<script>
+    const button = document.querySelector("button");
+    const showMessage=()=>{
+        alert("¡Botón clickeado!");
+        button.removeEventListener("Click", showMessage)
+    }
+    const changeColor = ()=> button.classList.toggle("red");
+    button.addEventListener("click", showMessage)
+    button.addEventListener("click", changeColor)
+
+    
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click Aquí</button>
+    <script>
+        const boton = document.querySelector("button");
+        boton.addEventListener("click", (event) => {
+            console.log(event.type);
+            console.log(event.clientX)
+            console.log(event.clientY)
+            console.log(event)
+        })
+    </script>
+
+
+</body>
+</html>

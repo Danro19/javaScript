@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        
+        
+    }
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    .gato{
+        width: 40vw;
+        justify-content: center;
+        text-align: center;
+        background-color: yellow;
+    }
+</style>
+<body>
+    <div class="gato">
+        <h4>Ejemplo Eventos JS - Aumentar y Disminuir</h4>
+        <div>
+            <h2>Contador</h2>
+            <div>
+                <button id="aumentar">Aumentar</button>
+                <button id="disminuir">Disminuir</button>
+            </div>
+            <div id="contador"> contador:  </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    const aumentar = document.getElementById("aumentar");
+const disminuir = document.getElementById("disminuir");
+let cont = 0;
+const contador = document.getElementById("contador");
+
+aumentar.addEventListener("click", () => {
+    cont++; 
+    contador.textContent = `contador:` + cont;
+});
+
+disminuir.addEventListener("click", () => {
+    cont--;
+    contador.textContent = `contador:` + cont;
+});
+
+
+</script>
+</html
